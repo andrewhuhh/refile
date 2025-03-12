@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browser Image Compressor</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Image Compressor</h1>
+        
+        <div class="upload-section" id="dropZone">
+            <input type="file" id="fileInput" multiple accept="image/*">
+            <i class="fas fa-cloud-upload-alt icon"></i>
+            <p>Drop images here or click to upload</p>
+            <p style="font-size: 0.875rem; margin-top: 0.5rem;">Supports JPG, PNG, WebP</p>
+        </div>
+
+        <div class="images-section">
+            <div id="imagesGrid" class="images-grid"></div>
+            <div class="add-more-btn" id="addMoreBtn" style="display: none;">
+                <i class="fas fa-plus"></i>
+                Add
+            </div>
+        </div>
+
+        <div class="settings">
+            <div class="setting-group">
+                <label for="format">Output Format</label>
+                <select id="format">
+                    <option value="jpeg">JPEG</option>
+                    <option value="png">PNG</option>
+                    <option value="webp">WebP</option>
+                </select>
+            </div>
+
+            <div class="setting-group">
+                <label for="quality">Compression Level</label>
+                <select id="quality">
+                    <option value="0.75">Light (25% Compression)</option>
+                    <option value="0.5">Medium (50% Compression)</option>
+                    <option value="0.1">High (90% Compression)</option>
+                </select>
+            </div>
+        </div>
+        
+        <div class="button-group">
+            <button id="clearAll" class="btn clear-all" style="display: none;">
+              <i class="fas fa-trash"></i> Clear All
+            </button>
+            <button id="downloadAll" class="btn download-all" style="display: none;">
+                <i class="fas fa-download"></i> Download All as ZIP
+            </button>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
