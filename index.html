@@ -13,10 +13,10 @@
         <h1>Image Compressor</h1>
         
         <div class="upload-section" id="dropZone">
-            <input type="file" id="fileInput" multiple accept="image/*">
+            <input type="file" id="fileInput" multiple>
             <i class="fas fa-cloud-upload-alt icon"></i>
             <p>Drop images here or click to upload</p>
-            <p style="font-size: 0.875rem; margin-top: 0.5rem;">Supports JPG, PNG, WebP</p>
+            <p class="supported-types" id="supportedTypesText">Supports images</p>
         </div>
 
         <div class="images-section">
@@ -31,10 +31,8 @@
             <div class="setting-group">
                 <label for="format">Output Format</label>
                 <select id="format">
-                    <option value="jpeg">JPEG</option>
-                    <option value="png">PNG</option>
-                    <option value="webp">WebP</option>
                 </select>
+                <p class="setting-help" id="formatHelp">Only formats supported by this browser are shown.</p>
             </div>
 
             <div class="setting-group">
@@ -44,6 +42,7 @@
                     <option value="0.5">Medium (50% Compression)</option>
                     <option value="0.1">High (90% Compression)</option>
                 </select>
+                <p class="setting-help" id="qualityHelp">Applies to lossy output formats.</p>
             </div>
         </div>
         
@@ -58,6 +57,6 @@
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
-    <script src="script.js"></script>
+    <script type="module" src="src/app.js"></script>
 </body>
 </html>
